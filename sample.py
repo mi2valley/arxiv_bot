@@ -1,7 +1,15 @@
 import slackweb
 import os
 
+
+text = "test"
 slack_id = os.getenv("SLACK_INCOMING_WEBHOOK_URL")
-if slack_id is not None:
-  slack = slackweb.Slack(url=slack_id)
-  slack.notify(text="hello world")
+
+def main() -> None:
+    # slack
+    if slack_id is not None:
+        slack = slackweb.Slack(url=slack_id)
+        slack.notify(text="test")
+
+if __name__ == "__main__":
+    main()
