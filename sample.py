@@ -1,9 +1,10 @@
 import slackweb
 import os
+import arxiv
 
 text = "test"
 slack_id = os.getenv("SLACK_WEBHOOK_URL")
-print(type(slack_id))
+l = arxiv.query(query='au:"Saikat Guha"')
 """
 def main() -> None:
     # slack
@@ -14,6 +15,6 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 """
-
+attachments = l[0].as_dict()
 slack = slackweb.Slack(url=str(slack_id))
-slack.notify(text=text)
+slack.notify(text=text, attachments=attachments)
