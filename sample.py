@@ -6,7 +6,7 @@ import argparse
 text = "test"
 #parser = argparse.ArgumentParser(description='slack env')
 #parser.add_argument('env', type=str)
-slack_id = os.getenv("SLACK_INCOMING_WEBHOOK_URL")
+slack_id = os.getenv("SLACK_ID")
 #args = parser.parse_args()
 #print(type(slack_id))
 """
