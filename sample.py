@@ -20,8 +20,6 @@ for result in search.results():
         {
         "mrkdwn_in": ["text"],
             "color": "#36a64f",
-            "author_name": result.authors[0],
-            "title": result.title,
             "text": result.summary,
             "thumb_url": "http://placekitten.com/g/200/200",
             "footer": "footer",
