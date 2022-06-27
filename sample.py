@@ -1,7 +1,6 @@
 import slackweb
 import os
 import argparse
-import sys
 
 
 text = "test"
@@ -9,8 +8,6 @@ parser = argparse.ArgumentParser(description='slack env')
 parser.add_argument('env', type=str)
 #slack_id = os.getenv("SLACK_INCOMING_WEBHOOK_URL")
 args = parser.parse_args()
-if sys.argv:
-  del sys.argv[1:]
 #print(type(slack_id))
 """
 def main() -> None:
