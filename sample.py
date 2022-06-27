@@ -1,10 +1,14 @@
 import slackweb
 import os
+import argparse
 
 
 text = "test"
-slack_id = os.getenv("SLACK_INCOMING_WEBHOOK_URL")
-print(type(slack_id))
+parser = argparse.ArgumentParser(description='slack env')
+parser.add_argument('env', type=str)
+#slack_id = os.getenv("SLACK_INCOMING_WEBHOOK_URL")
+args = parser.parse_args()
+#print(type(slack_id))
 """
 def main() -> None:
     # slack
@@ -16,5 +20,5 @@ if __name__ == "__main__":
     main()
 """
 
-slack = slackweb.Slack(url=slack_id)
-slack.notify(text="test")
+slack = slackweb.Slack(url=args.env)
+slack.notify(text=text)
