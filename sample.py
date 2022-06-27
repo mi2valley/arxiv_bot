@@ -4,7 +4,11 @@ import arxiv
 
 text = "test"
 slack_id = os.getenv("SLACK_WEBHOOK_URL")
-l = arxiv.query(query='au:"Saikat Guha"')
+author = "Saikat Guha"
+
+def au_search(author: str):
+  search = arxiv.Search(query ='au:"'+author+'"',max_results = 1,sort_by = arxiv.SortCriterion.SubmittedDate)
+  return search
 """
 def main() -> None:
     # slack
@@ -15,6 +19,7 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 """
-attachments = l[0].as_dict()
+search = au_search(au)
+attachments = search.results()[0].as_dict()
 slack = slackweb.Slack(url=str(slack_id))
 slack.notify(text=text, attachments=attachments)
