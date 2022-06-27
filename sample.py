@@ -5,6 +5,7 @@ import os
 text = "test"
 slack_id = os.getenv("SLACK_INCOMING_WEBHOOK_URL")
 
+"""
 def main() -> None:
     # slack
     if slack_id is not None:
@@ -13,3 +14,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+"""
+
+slack = slackweb.Slack(url=slack_id)
+slack.notify(text=text)
