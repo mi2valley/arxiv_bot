@@ -4,7 +4,7 @@ import os
 
 text = "test"
 slack_id = os.getenv("SLACK_INCOMING_WEBHOOK_URL")
-
+print(type(slack_id))
 """
 def main() -> None:
     # slack
