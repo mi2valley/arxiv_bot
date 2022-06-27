@@ -11,11 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Check out theis repo
-      - name: Create dot env file
-      - shell: bash
-        run: |
-          touch .env
-          echo "SLACK_ID=${{ secrets.SLACK_INCOMING_WEBHOOK_URL }}" >> .env
       - uses: actions/checkout@v2
       # Start a Slack workflow using a webhook trigger
       # https://github.com/slackapi/slack-github-action
