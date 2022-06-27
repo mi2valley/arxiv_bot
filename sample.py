@@ -20,6 +20,6 @@ if __name__ == "__main__":
     main()
 """
 search = au_search(author)
-attachments = search.results()[0].as_dict()
+attachments = search.results()[0].summary
 slack = slackweb.Slack(url=str(slack_id))
-slack.notify(text=text, attachments=attachments)
+slack.notify(text=attachments)
