@@ -17,4 +17,4 @@ if __name__ == "__main__":
 """
 
 slack = slackweb.Slack(url=slack_id)
-slack.notify(text=text)
+slack.notify(text="test")
