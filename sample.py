@@ -43,7 +43,7 @@ def search_keyword(
     for paper in papers:
         url = paper.entry_id
         title = paper.title
-        abstract = paper.abstract
+        abstract = paper.summary
         score, hit_keywords = calc_score(abstract, keywords)
         if (score != 0) and (score >= score_threshold):
             result = Result(
