@@ -4,9 +4,6 @@ import arxiv
 import datetime
 from dataclasses import dataclass
 
-#slack_id = os.getenv("SLACK_WEBHOOK_URL")
-#slack = slackweb.Slack(url=str(slack_id))
-
 @dataclass
 class Result:
     url: str
