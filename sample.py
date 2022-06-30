@@ -69,7 +69,7 @@ def notify(results: list, slack_id: str) -> None:
     today = datetime.date.today()
     n_papers = len(results)
     text = f'{star}\n \t \t {today}\tnum of papers = {n_papers}\n{star}'
-    send2app(text, slack_id)
+    send2slack(text, slack_id)
     # descending
     for result in sorted(results, reverse=True, key=lambda x: x.score):
         url = result.url
@@ -86,7 +86,7 @@ def notify(results: list, slack_id: str) -> None:
                f'\n \t {abstract}'\
                f'\n {star}'
 
-        send2app(text, slack_id)
+        send2slack(text, slack_id)
 
 def send2slack(text: str, slack_id: str) -> None:
     # slack
