@@ -1,4 +1,4 @@
-name: Slack Incoming Webhooks
+name: arxiv bot
 on:
   schedule:
     - cron: "50 0 * * 0,3,4,5,6"
@@ -25,8 +25,8 @@ jobs:
         run: python -V
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Run Python
-        run: python sample.py
+      - name: Search arxiv for the given query
+        run: python search-arxiv.py
         env:
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_INCOMING_WEBHOOK_URL }}
