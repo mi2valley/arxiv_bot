@@ -29,7 +29,7 @@ def main():
     papers = arxiv.Search(query=arxiv_search,
                            max_results=100,
                            sort_by='submittedDate')
-    results = search_keyword(papers, keywords, score_threshold)
+    results = search_keyword(list(papers), keywords, score_threshold)
 
     slack_id = os.getenv("SLACK_WEBHOOK_URL")
     notify(results, slack_id)
