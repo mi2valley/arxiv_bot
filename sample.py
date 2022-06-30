@@ -28,7 +28,7 @@ def main():
                   f'[{day_before_yesterday_str}000000 TO {day_before_yesterday_str}235959]'
     papers = arxiv.Search(query=arxiv_search,
                            max_results=100,
-                           sort_by='submittedDate')
+                           sort_by=arxiv.SortCriterion.SubmittedDate)
     results = search_keyword(papers.results(), keywords, score_threshold)
 
     slack_id = os.getenv("SLACK_WEBHOOK_URL")
