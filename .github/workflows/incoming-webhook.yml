@@ -2,9 +2,6 @@ name: arxiv bot
 on:
   schedule:
     - cron: "50 0 * * 0,3,4,5,6"
-  push:
-    branches: [main]
-  pull_request:
   workflow_dispatch:
     branches: [main]
 

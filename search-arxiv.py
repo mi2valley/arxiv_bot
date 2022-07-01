@@ -14,7 +14,7 @@ class Result:
 
 def main():
     subject = 'cat:physics.* OR cat:quant-ph'
-    keywords = {'quantum memory': 3, 'atomic frequency comb': 3, 'quantum internet': 2, 'quantum repeater': 2, 'quantum walk': 2, 'entanglement distribution': 2, 'photon': 1}
+    keywords = {'quantum memory': 3, 'atomic frequency comb': 3, 'quantum internet': 2, 'quantum repeater': 2, 'quantum walk': 2, 'entanglement distribution': 2, 'purification': 2, 'photon': 1}
     score_threshold = 2
 
     day_before_yesterday = datetime.datetime.today() - datetime.timedelta(days=2)
