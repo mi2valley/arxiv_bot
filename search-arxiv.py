@@ -43,6 +43,7 @@ def search_keyword(
         abstract = paper.summary
         score, hit_keywords = calc_score(abstract, keywords)
         if (score != 0) and (score >= score_threshold):
+            abstract = abstract.replace('\n', '')
             result = Result(
                     url=url, title=title, abstract=abstract,
                     score=score, words=hit_keywords)
